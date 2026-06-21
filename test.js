@@ -1,5 +1,7 @@
 // const express = require('express');
+const express = require('express');
 // const http = require('http');
+const http = require('http');
 
 const app = express();
 app.get('/', (req, res) => res.send('Hello from Express App'));
@@ -17,9 +19,9 @@ const server = app.listen(5000, () => {
             server.close();
             process.exit(1);
         }
-        }).on('error', (err) => {
-            console.error('Request failed:', err.message);
-            server.close();
-            process.exit(1);            
-        });
+    }).on('error', (err) => {
+        console.error('Request failed:', err.message);
+        server.close();
+        process.exit(1);            
+    });
 });
